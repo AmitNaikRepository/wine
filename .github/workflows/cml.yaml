@@ -10,8 +10,6 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cml-setup
-
           apt-get update && apt-get install -y python-pip && pip install --upgrade pip
 
           # Your ML workflow goes here
@@ -27,4 +25,5 @@ jobs:
           cml-send-commit report.md
           cml-publish residual.png --md >> report.md 
           #hello
-          cml-send-comment report.md
+          
+          cml-send-report -p report.md 
