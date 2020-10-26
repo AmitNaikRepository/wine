@@ -23,3 +23,5 @@ jobs:
           
           cml-send-commit report.md
           cml-publish residual.png --md >> report.md 
+          
+          cml-send-comment report.md
